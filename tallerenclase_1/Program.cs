@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using tallerenclase_1.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<tallerenclase_1Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("tallerenclase_1Context") ?? throw new InvalidOperationException("Connection string 'tallerenclase_1Context' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
