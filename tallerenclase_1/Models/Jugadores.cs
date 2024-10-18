@@ -9,11 +9,11 @@ namespace tallerenclase_1.Models
         public int Id { get; set; }
         [MaxLength(100)]
         public string Nombre { get; set; }
-        
+         public Equipo Equipo { get; set; }
+        [ForeignKey("nombre")]
         public int Edad {  get; set; }
         public string Posicion {  get; set; }
-        public Equipo Equipo { get; set; }
-        [ForeignKey("nombre")]
+       
 
     }
 }
